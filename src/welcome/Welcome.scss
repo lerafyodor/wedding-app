@@ -1,0 +1,202 @@
+@import "../assets/mixins";
+
+.wd-welcome {
+  background: white;
+  margin: auto;
+  box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.1);
+  display: flex;
+ // @include font-regular;
+  @include font-hand;
+  z-index: 2;
+
+  @media (orientation: landscape) {
+    width: 70vh;
+    height: 70vh;
+    font-size: 3vh;
+  }
+  @media screen and (orientation: portrait) {
+    width: 85vw;
+    height: 85vw;
+    font-size: 4.2vw;
+  }
+
+  &__peo1 {
+    position: absolute;
+    z-index: 3;
+
+    @media (orientation: landscape) {
+      width: 50vh;
+      right: -22vh;
+      top: -28vh;
+    }
+
+    @media screen and (orientation: portrait) {
+      width: 55vw;
+      right: -18vw;
+      top: -36vw;
+    }
+  }
+
+  &__peo2 {
+    position: absolute;
+    z-index: 3;
+
+    @media (orientation: landscape) {
+      width: 50vh;
+      bottom: -13vh;
+      left: -15vh;
+    }
+
+    @media screen and (orientation: portrait) {
+      width: 54vw;
+      bottom: -14vw;
+      left: -14vw;
+    }
+  }
+
+  &__text {
+    &._bold {
+      @include font-regular;
+    }
+  }
+
+  &__wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    overflow: hidden;
+    position: fixed;
+    opacity: 0;
+    transition: opacity 0.5s ease-in 1s;
+
+    &._show {
+      opacity: 1;
+    }
+
+    &-max {
+      display: flex;
+      width: 100%;
+      height: 100vh;
+    }
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    position: relative;
+  }
+
+  &__texts {
+    //justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    cursor: default;
+
+    @media (orientation: landscape) {
+      margin: 5vh;
+    }
+    @media screen and (orientation: portrait) {
+      margin: 5vw;
+    }
+  }
+
+  &__dear,
+  &__names {
+    @media (orientation: landscape) {
+      font-size: 3.5vh;
+    }
+
+    @media screen and (orientation: portrait) {
+      font-size: 4.75vw;
+    }
+  }
+
+  &__dear {
+    @media (orientation: landscape) {
+      width: 86%;
+    }
+
+    @media screen and (orientation: portrait) {
+      width: 80%;
+    }
+  }
+
+  &__names {
+    text-align: right;
+    @media (orientation: landscape) {
+      margin-top: 5vh;
+    }
+
+    @media screen and (orientation: portrait) {
+      margin-top: 6vw;
+    }
+  }
+
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 0.2;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+
+  &__scroll {
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+    color: #bcb694;
+    position: absolute;
+    bottom: 18px;
+    right: 18px;
+    align-items: center;
+
+    @media (orientation: landscape) {
+      bottom: 4vh;
+      right: 3vh;
+    }
+
+    @media screen and (orientation: portrait) {
+      bottom: 4vw;
+      right: 3vw;
+    }
+
+    &-arrow {
+      fill: #d97f88;
+      opacity: 0.2;
+      animation: pulse 2.5s ease-in-out infinite;
+
+      @media (orientation: landscape) {
+        width: 4vh;
+        margin-top: -1vh;
+      }
+
+      @media screen and (orientation: portrait) {
+        width: 5vw;
+        margin-top: -2vw;
+      }
+
+      &._delay1 {
+        animation-delay: 0.5s;
+      }
+
+      &._delay2 {
+        animation-delay: 1s;
+      }
+    }
+  }
+
+  &__text {
+    @media (orientation: landscape) {
+      line-height: 5vh;
+      margin-top: 5vh;
+    }
+
+    @media screen and (orientation: portrait) {
+      line-height: 6vw;
+      margin-top: 6vw;
+    }
+  }
+}

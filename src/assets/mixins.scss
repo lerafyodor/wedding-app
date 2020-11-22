@@ -1,0 +1,41 @@
+@font-face {
+  font-family: "Handwrite";
+  src: url("/fonts/thin.otf") format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Gilroy";
+  src: url("/fonts/Gilroy-Regular.woff") format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Gilroy";
+  src: url("/fonts/Gilroy-Bold.woff") format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@mixin font-regular {
+  font-family: Gilroy, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+}
+
+@mixin font-bold {
+  font-family: Gilroy, Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+}
+
+@mixin font-hand {
+  font-family: Handwrite, Gilroy, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+}
